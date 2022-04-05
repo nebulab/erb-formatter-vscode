@@ -1,0 +1,50 @@
+{
+  "name": "erb-formatter",
+  "repository": "https://github.com/nebulab/erb-formatter-vscode",
+  "displayName": "ERB Formatter",
+  "description": "Format ERB files with speed and precision.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.66.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "categories": [
+    "Formatters"
+  ],
+  "activationEvents": [
+    "onLanguage:erb"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Format ERB settings",
+      "properties": {
+        "erb-formatter.commandPath": {
+          "type": "string",
+          "default": "bundle exec erb-format",
+          "description": "Path to the erb-format command.  Set this to an absolute path to select from multiple installed Ruby versions. Can innclude `bundle exec`",
+          "scope": "resource"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.66.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "14.x",
+    "eslint": "^8.11.0",
+    "glob": "^7.2.0",
+    "mocha": "^9.2.2",
+    "typescript": "^4.5.5",
+    "@vscode/test-electron": "^2.1.3"
+  }
+}
