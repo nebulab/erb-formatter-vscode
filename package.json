@@ -1,6 +1,7 @@
 {
   "name": "erb-formatter",
   "repository": "https://github.com/nebulab/erb-formatter-vscode",
+  "publisher": "elia",
   "displayName": "ERB Formatter",
   "description": "Format ERB files with speed and precision.",
   "version": "0.0.1",
