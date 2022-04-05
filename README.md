@@ -1,6 +1,6 @@
-# erb-formatter for VSCode
+# ERB::Formatter 🪜 (for VSCode)
 
-VSCode extension for the `ERB::Formatter` 🪜 gem (https://github.com/nebulab/erb-formatter#readme).
+VSCode extension for the `ERB::Formatter` gem (https://github.com/nebulab/erb-formatter#readme).
 
 ## Features
 
@@ -28,5 +28,5 @@ This extension contributes the following settings:
 
 ## Release Notes
 
-VSCode plugin: https://github.com/nebulab/erb-formatter-vscode/releases
+VSCode extension: https://github.com/nebulab/erb-formatter-vscode/releases
 ERB::Formatter https://github.com/nebulab/erb-formatter/releases
