@@ -40,7 +40,7 @@ class ErbFormatter {
       } else {
         vscode.window.showErrorMessage(`format-erb failed: ${e.message}`)
       }
-      return []
+      return input
     }
   }
 
