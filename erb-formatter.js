@@ -11,7 +11,8 @@ class ErbFormatter {
 
   provideDocumentFormattingEdits(document) {
     const erbFormatCommand = this._config["commandPath"]
-    const cmd = `${erbFormatCommand} --stdin-filename "${document.fileName}"`
+    const lineLength = this._config["lineLength"] || 80
+    const cmd = `${erbFormatCommand} --stdin-filename "${document.fileName}" --print-width ${lineLength}`
     const projectDir = this.getCurrentPath(document.fileName)
     const originalSource = document.getText()
 
