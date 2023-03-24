@@ -18,13 +18,10 @@ Only requires the `erb` language to be defined, usually added by https://github.
 
 ## Extension Settings
 
-Include if your extension adds any VSCode settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
 * `erb-formatter.commandPath`: Customize the full command for the ERB Formatter, includes bundler or any extra option.
+* `erb-formatter.lineLength`: Customize the line length where the formatter will start breaking lines. Defaults to 80.
 
 ## Release Notes
 
