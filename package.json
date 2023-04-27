@@ -9,9 +9,6 @@
     "vscode": "^1.66.0"
   },
   "categories": [
-    "Other"
-  ],
-  "categories": [
     "Formatters"
   ],
   "activationEvents": [
