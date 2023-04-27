@@ -28,8 +28,8 @@ This extension contributes the following settings:
 VSCode extension: https://github.com/nebulab/erb-formatter-vscode/releases
 ERB::Formatter https://github.com/nebulab/erb-formatter/releases
 
-## Development
+## Releasing
 
 ```bash
-yarn run vsce publish
+bin/release
 ``` 
