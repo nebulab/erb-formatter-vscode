@@ -1,6 +1,9 @@
 {
   "name": "erb-formatter",
-  "repository": "https://github.com/nebulab/erb-formatter-vscode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nebulab/erb-formatter-vscode.git"
+  },
   "publisher": "elia",
   "displayName": "Ruby ERB::Formatter",
   "description": "Format ERB files with speed and precision.",
@@ -11,6 +14,7 @@
   "categories": [
     "Formatters"
   ],
+  "icon": "icon.png",
   "activationEvents": [
     "onLanguage:erb"
   ],
