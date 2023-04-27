@@ -2,7 +2,7 @@
   "name": "erb-formatter",
   "repository": "https://github.com/nebulab/erb-formatter-vscode",
   "publisher": "elia",
-  "displayName": "ERB Formatter",
+  "displayName": "Ruby ERB::Formatter",
   "description": "Format ERB files with speed and precision.",
   "version": "0.0.2",
   "engines": {
@@ -21,12 +21,12 @@
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "Format ERB settings",
+      "title": "Ruby ERB::Formatter settings",
       "properties": {
         "erb-formatter.commandPath": {
           "type": "string",
           "default": "bundle exec erb-format",
-          "description": "Path to the erb-format command.  Set this to an absolute path to select from multiple installed Ruby versions. Can innclude `bundle exec`",
+          "description": "Path to the erb-format command.  Set this to an absolute path to select from multiple installed Ruby versions. Can include `bundle exec`",
           "scope": "resource"
         }
       }
