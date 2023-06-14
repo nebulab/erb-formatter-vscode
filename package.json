@@ -29,6 +29,12 @@
           "default": "bundle exec erb-format",
           "description": "Path to the erb-format command.  Set this to an absolute path to select from multiple installed Ruby versions. Can include `bundle exec`",
           "scope": "resource"
+        },
+        "erb-formatter.lineLength": {
+          "type": "number",
+          "default": 80,
+          "description": "Mix line-length to be used when formatting.",
+          "scope": "resource"
         }
       }
     }
