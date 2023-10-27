@@ -34,7 +34,7 @@ class ErbFormatter {
       return output
     } catch (e) {
       this.log(`failed: \n${e.message}`)
-      if (!this.detectBundledErbFormatter()) {
+      if (this.detectBundledErbFormatter()) {
         vscode.window.showErrorMessage(
           "erb-formatter not found by bundler. Add `gem 'erb-formatter'` to your Gemfile and run `bundle install`."
         )
