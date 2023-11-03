@@ -19,12 +19,13 @@ class ErbFormatter {
     const output = this.execSync(cmd, {
       cwd: projectDir,
       input: originalSource,
+      fileName: document.fileName
     })
 
     return [new vscode.TextEdit(this.getFullRange(document), output.toString())]
   }
 
-  execSync(cmd, { cwd, input }) {
+  execSync(cmd, { cwd, input, fileName }) {
     try {
       this.log(`executing: ${cmd}`)
       const startTime = hrtime()
@@ -34,12 +35,26 @@ class ErbFormatter {
       return output
     } catch (e) {
       this.log(`failed: \n${e.message}`)
-      if (!this.detectBundledErbFormatter()) {
+      if (this.detectBundledErbFormatter()) {
         vscode.window.showErrorMessage(
           "erb-formatter not found by bundler. Add `gem 'erb-formatter'` to your Gemfile and run `bundle install`."
         )
       } else {
-        vscode.window.showErrorMessage(`format-erb failed: ${e.message}`)
+        // Split full error log into lines and remove empty ones
+        const lines = e.message.split("\n").filter(Boolean)
+
+        // Get the most relevant part to show in the error dialog
+        const errorMessage = lines.filter(line => line.startsWith("==> ERROR:")).toString();
+
+        // The last line of the error stack includes the failure's line number, for example:
+        // "from /Users/johndoe/my-rails-project/app/views/home/index.html.erb:7:in `div'"
+        const lastLine = lines[lines.length - 1]
+
+        // To extract the line number, we split it by the file name, get the
+        // second part (":7:in `div'") and extract the first number
+        const lineNumber = lastLine.split(fileName)[1].match(/[\d.]+/)[0];
+
+        vscode.window.showErrorMessage(`Failed in line ${lineNumber} ${errorMessage}`)
       }
       return input
     }
